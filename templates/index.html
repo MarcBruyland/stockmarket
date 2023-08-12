@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Exchange Data</title>
+</head>
+<body>
+    <h1>Welcome to wonderful world of Finance</h1>
+    <a href="{{ url_for('get_exchanges')}}">Stock exchanges</a>
+    <BR>
+    <a href="{{ url_for('get_currencies')}}">Currencies</a>
+    <BR>
+    <a href="{{ url_for('get_tickers')}}">Tickers (in USA)</a>
+    <BR>
+    <a href="https://marketstack.com/search">Tickers (in the world)</a>
+    <BR>
+    <form action="/eod_via_form" method="post">
+        <input type="text" placeholder="ticker" name="ticker">
+        <button type="submit">get EOD</button>
+    </form>
+    <a href="{{ url_for('get_eod', ticker='SOF.XBRU')}}">EOD data for Sofina</a>
+</body>
+</html>

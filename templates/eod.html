@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Exchange Data</title>
+</head>
+<body>
+    <h1>End of day data for {{name}} ({{ticker}})</h1>
+    {% if filename %}
+        <img src="{{ url_for('send_file', filename=filename) }}">
+    {% endif %}
+    <BR>
+{% for k,v  in result.items() %}
+    {{k}}
+    {{v}}
+    <BR>
+{% endfor %}
+
+</body>
+</html>
